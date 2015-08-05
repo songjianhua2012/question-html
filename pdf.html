@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/png" href="./bower_components/jasmine/images/jasmine_favicon.png">
+    <link rel="stylesheet" type="text/css" href="./bower_components/jasmine/lib/jasmine-core/jasmine.css">
+
+    <script type="text/javascript" src="./bower_components/jasmine/lib/jasmine-core/jasmine.js"></script>
+    <script type="text/javascript" src="./bower_components/jasmine/lib/jasmine-core/jasmine-html.js"></script>
+    <script type="text/javascript" src="./bower_components/jasmine/lib/jasmine-core/boot.js"></script>
+
+    <title></title>
+</head>
+    <body>
+
+
+      <div class="" id="test-container">
+
+    <div class="mid" >
+        西安软件服务外包学院<br>
+        ————————————————————————————————————————————————<br>
+    <div class="d_1">
+        <h1>统一建模语言理论测试</h1>
+    </div>
+    <font size="5">考试科目:统一建模语言UML       时间:100分钟       得分:<input type="text" name="score" value="0"/></font><br>
+    <br>
+    <font size="5">班级：<input type="text" name="class"/>学号：<input type="text" autocomplete="off" name="num" id="Snum">姓名：<input type="text" name="name"/></font>
+    </div>
+
+    <div class="d_2">
+        <br>
+    <h3 align="left">一、     填空题</h3>
+    <h4>1.uml的中文全称是:<input type="text" name="1_1"/></h4>
+    <h4>2.对象最突出的特征是:<input type="text" name="1_2_1"/> <input type="text" name="1_2_2"/> <input type="text" name="1_2_3"/></h4>
+    </div>
+
+    <div class="d_3">
+    <h3 align="left">二、     选择题</h3>
+    <h4>1.UML与软件工程的关系是： <input type="text" name="2"/></h4>
+    <h4><input type="radio" id="2_1_A" name="2_1" value="A"/>(A)UML就是软件工程</h4>
+    <h4><input type="radio" id="2_1_B" name="2_1" value="B"/>(B)UML参与到软件工程开发的几个阶段</h4>
+    <h4><input type="radio" id="2_1_C" name="2_1" value="C"/>(C)UML与软件工程无关</h4>
+    <h4><input type="radio" id="2_1_D" name="2_1" value="D"/>(D)UML是软件工程的一部分</h4>
+    <h4>2.Java语言支持:<input type="text" name="2_2_1"/></h4>
+    <h4><input type="radio" id="2_2_A" name="2_2" value="A"/>(A)多继承</h4>
+    <h4><input type="radio" id="2_2_B" name="2_2" value="B"/>(B)单继承</h4>
+    <h4><input type="radio" id="2_2_C" name="2_2" value="C"/>(C)多继承单继承都支持</h4>
+    <h4><input type="radio" id="2_2_D" name="2_2" value="D"/>(D)多继承单继承都不支持</h4>
+    </div>
+
+    <div class="d_4">
+    <h3 align="left">三、     多选题</h3>
+    <h4>1.用例的粒度分为以下哪几种： <input type="text" name="3"/></h4>
+    <h4><input type="checkbox" name="3_1" id="3_1_A" value="A"/>(A)概述级</h4>
+    <h4><input type="checkbox" name="3_1" id="3_1_B" value="B"/>(B)需求级</h4>
+    <h4><input type="checkbox" name="3_1" id="3_1_C" value="C"/>(C)用户级</h4>
+    <h4><input type="checkbox" name="3_1" id="3_1_D" value="D"/>(D)子功能级</h4>
+    <h4>2.类图由以下哪三部分组成： <input type="text" name="3_2"/></h4>
+    <h4><input type="checkbox" name="3_2_1" id="3_2_A" value="A"/>(A)名称（name）</h4>
+    <h4><input type="checkbox" name="3_2_1" id="3_2_B" value="B"/>(B)属性（attribute）</h4>
+    <h4><input type="checkbox" name="3_2_1" id="3_2_C" value="C"/>(C)操作（operation）</h4>
+    <h4><input type="checkbox" name="3_2_1" id="3_2_D" value="D"/>(D)方法（function）</h4>
+    </div>
+
+    <div class="d_5">
+    <h3 align="left">四、     判断题</h3>
+    <h4>1.用例图只是用于和客户交流和沟通的,用于确定需求。 <input type="text" name="4_1"/></h4>
+    <h4>2. 在状态图中,终止状态在一个状态图中允许有任意多个。<input type="text" name="4_2"/></h4>
+    </div>
+
+    <div class="d_6">
+    <h3 align="left">五、     简 答 题 ( 每 题 4 分 , 共 20 分 )</h3>
+    <h4>1. 简述什么是模型以及模型的表现形式?</h4>
+    <textarea name="5_1" rows="3" cols="20"></textarea>
+        <input type="submit" name="提交" id="submit"/>
+        </div>
+    </div>
+  </div>
+</body>
+<script type="text/javascript" src="form-selizer.js"></script>
+    <script type="text/javascript" src="./spec/Scanner-spec.js"></script>
+
+
+
+</html>
