@@ -27,26 +27,27 @@ for (var i = 0; i < document.getElementsByName('3_1').length; i++) {
 document.getElementsByName('3_1')[0].value = str;
 */
 
-
-
-function getResult1() {
-    var result = [].filter.call(question1,function(elem) {
-        return elem.checked;
-    }).map(function(elem) {
-        return elem.value;
-    });
-    return result.join("");
+function manyChoice(str1,str2) {
+  function getResult1() {
+      var result = [].filter.call(question1,function(elem) {
+          return elem.checked;
+      }).map(function(elem) {
+          return elem.value;
+      });
+      return result.join("");
+  }
+  var question1 = document.getElementsByName(str1);
+  [].filter.call(question1,function(elem) {
+      elem.addEventListener('click', function () {
+          document.getElementsByName(str2)[0].value=getResult1();
+      });
+  });
 }
-var question1 = document.getElementsByName('3_1');
-[].filter.call(question1,function(elem) {
-    elem.addEventListener('click', function () {
-        document.getElementsByName('3')[0].value=getResult1();
-    });
-});
 
+manyChoice('3_1','3');
+manyChoice('3_2_1','3_2');
 
-
-function getResult() {
+/*function getResult() {
     var result = [].filter.call(question,function(elem) {
         return elem.checked;
     }).map(function(elem) {
@@ -61,24 +62,29 @@ var question = document.getElementsByName('3_2_1');
         document.getElementsByName('3_2')[0].value=getResult();
     });
 });
+*/
 
+function singleChoice(str1,str2) {
+  var question2 = document.getElementsByName(str1);
+  [].filter.call(question2,function(val) {
+      val.addEventListener('click',function() {
+          document.getElementsByName(str2)[0].value = getResult2();
+        });
+      });
 
-var question2 = document.getElementsByName('2_1');
-[].filter.call(question2,function(val) {
-    val.addEventListener('click',function() {
-        document.getElementsByName('2')[0].value = getResult2();
-    });
-});
-function getResult2() {
+  function getResult2() {
     var result = [].filter.call(question2,function(val) {
         return val.checked;
     }).map(function(val) {
         return val.value;
     });
     return result;
+  }
 }
 
-var question3 = document.getElementsByName('2_2');
+singleChoice('2_1','2');
+singleChoice('2_2','2_2_1');
+/*var question3 = document.getElementsByName('2_2');
 [].filter.call(question3,function(val) {
     val.addEventListener('click',function() {
         document.getElementsByName('2_2_1')[0].value = getResult3();
@@ -92,6 +98,7 @@ function getResult3() {
     });
     return result;
 }
+*/
 
 document.getElementById('submit').addEventListener('click',function(){
     document.getElementsByName('score')[0].value = getScore();
