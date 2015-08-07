@@ -24,8 +24,8 @@ describe("formSelizer test",function() {
   });
 
   it("should be right result",function() {
-    results = subFormSelizer.scan(form);
-    expect(results).toEqual([{type:'text',
+    subFormSelizer.scan(form);
+    expect(subFormSelizer.result).toEqual([{type:'text',
                               name:'1_1',
                               answer:'统一建模语言'},
                               {type:'text',

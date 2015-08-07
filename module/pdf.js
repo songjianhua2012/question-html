@@ -128,7 +128,7 @@ function getScore() {
         score += 15;
     }
 */
-    if(document.getElementsByName('1_1')[0].value == '统一建模语言') {
+  /*  if(document.getElementsByName('1_1')[0].value == '统一建模语言') {
         score += 5;
     }
     if(document.getElementsByName('3')[0].value == "AB") {
@@ -142,7 +142,17 @@ function getScore() {
     }
     if(document.getElementsByName('2')[0].value == "D") {
         score += 10;
-    }
+    }*/
+    var testContainer = document.getElementById("test-container");
+    form = testContainer.getElementsByTagName("form")[0];
+    var scanner = new formSelizer();
+    //score = scanner.scan();
+    var result=scanner.scan(form);
+    var different = new differentQuestion();
+    different.add(result);
 
+    var question = new Questions();
+    score = question.getScore(different);
+    //different.add();
     return score;
 }
