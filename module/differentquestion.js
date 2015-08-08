@@ -1,5 +1,5 @@
 function differentQuestion() {
-  this.Items = [new addBlankQuestion(),
+  this.Items = [new blankChoice(),
                 new singleChoice(),
                 new manyChoice()];
 }
@@ -9,32 +9,21 @@ differentQuestion.prototype.add = function(result) {
 
   //var totalscore = new totalScore();
 
-  for (var i = 0; i < this.result.length; i++) {
-    // if(this.result[i].type === 'input') {
-    //   this.addblank.addBlankQuestion(this.result[i]);
-    // }
-    // else if (this.result[i].type === 'radio') {
-    //   this.singlechoice.addSingleQuestion(this.result[i]);
-    // }
-    // else if (this.result[i].type === 'checkbox') {
-    //   this.manychoice.addManyQuestion(this.result[i]);
-    // }
+  for (var i = 0; i < this.Items.length; i++) {
 
-    switch(type) {
+    switch(result[i].type) {
       case 'text': {
-        this.Items[0].addBlankQuestion(this.result[i]);
+        this.Items[0].addBlankQuestion(result[i]);
       }
       break;
       case 'radio': {
-        if(this.result[i].checked) {
-          this.Items[1].addSingleQuestion(this.result[i]);
-        }
+          this.Items[1].addSingleQuestion(result[i]);
       }
       break;
       case 'checkbox': {
-        if(this.result[i].checked) {
-          this.Items[2].addManyQuestion(this.result[i]);
-        }
+        // if(this.result[i].checked) {
+          this.Items[2].addManyQuestion(result[i]);
+        //}
       }
       break;
     }

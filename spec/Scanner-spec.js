@@ -10,10 +10,10 @@ describe("formSelizer test",function() {
 
     "<input type='text' name='1_1' value='统一建模语言'/>"+
     "<input type='text' name='1_2' value='多态封装继承'/>"+
-    "<input type='radio' name='2_1' value='A'/>"+
-    "<input type='radio' name='2_2' value='D'/>"+
-    "<input type='checkbox' name='3_1' value='A'/>"+
-    "<input type='checkbox' name='3_1' value='B'>"+"</form>";
+    "<input type='radio' name='2_1' value='A' checked='true'/>"+
+    "<input type='radio' name='2_2' value='D' checked='true'/>"+
+    "<input type='checkbox' name='3_1' value='A' checked='true'/>"+
+    "<input type='checkbox' name='3_1' value='B' checked='true'>"+"</form>";
 
     form = testContainer.getElementsByTagName("form")[0];
 
@@ -24,8 +24,8 @@ describe("formSelizer test",function() {
   });
 
   it("should be right result",function() {
-    subFormSelizer.scan(form);
-    expect(subFormSelizer.result).toEqual([{type:'text',
+    var result = subFormSelizer.scan(form);
+    expect(result).toEqual([{type:'text',
                               name:'1_1',
                               answer:'统一建模语言'},
                               {type:'text',
