@@ -1,7 +1,7 @@
 function differentQuestion() {
-  this.addblank = new blankChoice();
-  this.singlechoice = new singleChoice();
-  this.manychoice = new manyChoice();
+  this.Items = [new addBlankQuestion(),
+                new singleChoice(),
+                new manyChoice()];
 }
 
 differentQuestion.prototype.add = function(result) {
@@ -22,18 +22,18 @@ differentQuestion.prototype.add = function(result) {
 
     switch(type) {
       case 'text': {
-        addblank.addBlankQuestion(this.result[i]);
+        this.Items[0].addBlankQuestion(this.result[i]);
       }
       break;
       case 'radio': {
         if(this.result[i].checked) {
-          singlechoice.addSingleQuestion(this.result[i]);
+          this.Items[1].addSingleQuestion(this.result[i]);
         }
       }
       break;
       case 'checkbox': {
         if(this.result[i].checked) {
-          manychoice.addManyQuestion(this.result[i]);
+          this.Items[2].addManyQuestion(this.result[i]);
         }
       }
       break;
