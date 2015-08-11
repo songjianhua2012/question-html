@@ -15,5 +15,6 @@
   ],
   "devDependencies": {
     "jasmine": "~2.3.4"
-  }
+  },
+  "homepage": "https://github.com/songjianhua2012/question-html"
 }

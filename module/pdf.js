@@ -56,20 +56,21 @@ document.getElementById('submit').addEventListener('click',function(){
     document.getElementsByName('score')[0].value = getScore();
 });
 
+var testContainer = document.getElementById("test-container");
+var form = testContainer.getElementsByTagName("form")[0];
 
 function getScore() {
     var score = 0;
-
-    var testContainer = document.getElementById("test-container");
-    form = testContainer.getElementsByTagName("form")[0];
-    var scanner = new formSelizer();
-
+    var scanner = new FormSelizer();
     var result=scanner.scan(form);
+
     var different = new differentQuestion();
+
     different.add(result);
+    alert(different.Items[0].singleQuestions[0].answer);
 
     var question = new Questions();
-    score = question.getScore(different);
-    //different.add();
+    score = question.getTScore(different);
+
     return score;
 }

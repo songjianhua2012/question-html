@@ -1,12 +1,15 @@
-function singleChoice() {
-  this.singleQuestions = [];
+function singleChoice1() {
+  this.singleQuestions=[];
 }
 
-singleChoice.prototype.addSingleQuestion=function(single) {
-  this.singleQuestions.push(single);
+singleChoice1.prototype.addSingleQuestion = function(single) {
+  //for(var j=0; j<this.singleQuestions.length; j++) {
+      this.singleQuestions.push(single);
+    //  return ;
+    //}
 };
 
-singleChoice.prototype.comp = function(answers) {
+singleChoice1.prototype.comp = function(answers) {
   for(var i=0; i<this.singleQuestions.length; i++) {
     for(var j=0; j<answers.length; j++) {
       if(this.singleQuestions[i].name === answers[j].name &&
@@ -21,7 +24,7 @@ singleChoice.prototype.comp = function(answers) {
   }
 };
 
-singleChoice.prototype.getTotalscore=function() {
+singleChoice1.prototype.getTotalscore=function() {
   var singleTotal = 0;
   for(var i=0; i<this.singleQuestions.length; i++) {
     singleTotal += this.singleQuestions[i].score;

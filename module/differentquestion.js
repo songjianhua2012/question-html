@@ -1,34 +1,29 @@
 function differentQuestion() {
-  this.Items = [new blankChoice(),
-                new singleChoice(),
-                new manyChoice()];
+  this.Items = [new singleChoice1(),new blankChoice(),new manyChoice1()];
 }
 
 differentQuestion.prototype.add = function(result) {
 
-
-  //var totalscore = new totalScore();
-
-  for (var i = 0; i < this.Items.length; i++) {
-
+  // this.Items[0] = new singleChoice1();
+  // this.Items[1] = new blankChoice();
+  // this.Items[2] = new manyChoice1();
+  //alert(this.Items[1].singleQuestions);
+  for (var i = 0; i < result.length; i++) {
+    //alert(this.Items);
     switch(result[i].type) {
-      case 'text': {
-        this.Items[0].addBlankQuestion(result[i]);
-      }
-      break;
-      case 'radio': {
-          this.Items[1].addSingleQuestion(result[i]);
-      }
-      break;
-      case 'checkbox': {
-        // if(this.result[i].checked) {
+
+      case 'radio':
+          (this.Items[0]).addSingleQuestion(result[i]);
+          //alert(this.Items[0].singleQuestions[0].answer);
+          break;
+      case 'text':
+        (this.Items[1]).addBlankQuestion(result[i]);
+        //alert(this.Items[1].blankQuestions[0].answer);
+        break;
+      case 'checkbox':
           this.Items[2].addManyQuestion(result[i]);
-        //}
-      }
-      break;
+          break;
     }
   }
-
-
-  //return totalscore.getTotalscore(addblank,singlechoice,manychoice);
+  //alert(this.Items[0].singleQuestions[0].name);
 };
